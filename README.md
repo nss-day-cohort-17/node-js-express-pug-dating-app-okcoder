@@ -37,3 +37,10 @@ After months without any success in the dating app market, you decide to rebrand
 <img src="img/okcoder_ERD.png" />
 
 ## mock-ups
+<img src="img/mockups/home.png" />
+<img src="img/mockups/matches.png" />
+<img src="img/mockups/pending.png" />
+<img src="img/mockups/profile.png" />
+<img src="img/mockups/login.png" />
+<img src="img/mockups/register-prof.png" />
+<img src="img/mockups/register-pref.png" />
