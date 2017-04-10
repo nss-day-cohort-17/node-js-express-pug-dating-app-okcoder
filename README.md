@@ -19,23 +19,18 @@ After months without any success in the dating app market, we have decided to re
 
 ## Technologies
 
-1. Use Knex, Bookshelf and PostgreSQL for the database and database ORM.
+1. We use Knex, Bookshelf and PostgreSQL for the database and database ORM.
+2. `Pug` as the view engine.
+3. For session persistence we have used the following technologies: `express-session`, `passport`, `passport-local`, `connect-session-knex`.
+4. Using `bookshelf-bcrypt` and `bcrypt`, we authenticate the users credentials on login and registration.
 
 <img src="img/techs/knex.png" width="200px" />
 <img src="img/techs/bookshelf-icon.png" width="200px" />
 <img src="img/techs/postgres.png" width="200px" />
-
-
-1. `Pug` as the view engine.
-
 <img src="img/techs/pug.png" />
-
-1. For session persistence we have used the following technologies: `express-session`, `passport`, `passport-local`, `connect-session-knex`.
-
 <img src="img/techs/express.png" width="200px" />
 <img src="img/techs/passport.png" width="200px" />
 
-1. Using `bookshelf-bcrypt` and `bcrypt`, we authenticate the users credentials on login and registration.
 
 ## ERD
 <img src="img/okcoder_ERD.png" />
