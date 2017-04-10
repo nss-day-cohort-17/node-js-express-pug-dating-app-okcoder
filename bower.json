@@ -1,0 +1,21 @@
+{
+  "name": "node-js-express-pug-dating-app-okcoder",
+  "homepage": "https://github.com/nss-day-cohort-17/node-js-express-pug-dating-app-okcoder",
+  "authors": [
+    "Luke Schuyler <lukeschuyler1@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "v4.0.0-alpha.6"
+  }
+}
