@@ -22,7 +22,7 @@ After months without any success in the dating app market, we have decided to re
 1. Use Knex, Bookshelf and PostgreSQL for the database and database ORM.
 
 <img src="img/techs/knex.png" />
-<img src="img/techs/bookshelf-icon.svg" />
+<img src="img/techs/bookshelf-icon.png" />
 <img src="img/techs/postgres.png" />
 
 1. `Pug` as the view engine.
