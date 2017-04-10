@@ -1,2 +1,4 @@
 node_modules
 public/lib
+db/migrations
+db/seeds
