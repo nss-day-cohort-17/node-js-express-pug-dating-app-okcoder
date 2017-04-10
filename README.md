@@ -21,9 +21,9 @@ After months without any success in the dating app market, we have decided to re
 
 1. Use Knex, Bookshelf and PostgreSQL for the database and database ORM.
 
-<img src="img/techs/knex.png" width="50px" />
-<img src="img/techs/bookshelf-icon.png" width="50px" />
-<img src="img/techs/postgres.png" width="50px" />
+<img src="img/techs/knex.png" width="200px" />
+!(<img src="img/techs/bookshelf-icon.png" width="200px" />)
+<img src="img/techs/postgres.png" width="200px" />
 
 1. `Pug` as the view engine.
 
@@ -31,8 +31,8 @@ After months without any success in the dating app market, we have decided to re
 
 1. For session persistence we have used the following technologies: `express-session`, `passport`, `passport-local`, `connect-session-knex`.
 
-<img src="img/techs/express.png" width="50px" />
-<img src="img/techs/passport.png" width="50px" />
+<img src="img/techs/express.png" width="200px" />
+<img src="img/techs/passport.png" width="200px" />
 
 1. Using `bookshelf-bcrypt` and `bcrypt`, we authenticate the users credentials on login and registration.
 
