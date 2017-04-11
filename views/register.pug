@@ -8,10 +8,49 @@ block content
   .login-form
     form(method="POST")
       .form-group
+        label(for='name') Name
+        input.form-control#name(
+          type='text'
+          name='name'
+          placeholder='First and Last name'
+          required
+        )
+      .form-group
+        label(for='age') Age
+        input.form-control#age(
+          type='text'
+          name='age'
+          required
+        )
+      .form-group
+        label(for='gender') Gender
+        select.form-control#gender(
+          name='gender'
+          required
+        )
+          option male
+          option female
+          option other
+      .form-group
+        label(for='username') Username
+        input.form-control#age(
+          type='text'
+          name='username'
+          required
+        )
+      .form-group
         label(for='email') Email Address
         input.form-control#email(
           type='email'
           name='email'
+          placeholder='you@example.com'
+          required
+        )
+      .form-group
+        label(for='phone') Phone Number
+        input.form-control#email(
+          type='phone'
+          name='phone'
           placeholder='you@example.com'
           required
         )
@@ -35,6 +74,7 @@ block content
         label(for='bio') Short Bio
         textarea.form-control(
           name='bio'
+          placeholder='A little blurb about yourself...'
           required
         )
       .contact-form__submit
