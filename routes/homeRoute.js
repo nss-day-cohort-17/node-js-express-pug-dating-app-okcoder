@@ -6,6 +6,6 @@ const user = require('../controllers/homeCtrl')
 
 const router = Router()
 
-router.get('/', user.show)
+router.get('/', show)
 
 module.exports = router
