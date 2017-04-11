@@ -1,6 +1,11 @@
 body {
   background-color: black;
 }
+
+.cursive {
+  font-family: 'Pinyon Script', cursive;
+}
+
 /****** NAVBAR ******/
 .navbar {
   display: flex;
@@ -28,6 +33,7 @@ body {
   display: flex;
   justify-content: center;
   margin-top: 0.5em;
+  font-family: 'Pinyon Script', cursive;
 }
 
 .carousel {
@@ -111,7 +117,9 @@ body {
   margin-top: 4em;
   color: white;
 }
-
+.Login__container__cursive {
+  font-family: 'Pinyon Script', cursive;
+}
 .Login__container__center {
   margin: auto;
 }
@@ -170,10 +178,12 @@ body {
 .Pending__left {
   width: 50%;
   margin: 1em;
+  font-family: 'Pinyon Script', cursive;
 }
 .Pending__right {
   width: 50%;
   margin: 1em;
+  font-family: 'Pinyon Script', cursive;
 }
 
 .Pending__box {
