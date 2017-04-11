@@ -1,4 +1,3 @@
 'use strict';
 
-module.exports.show = (req, res) =>
-  res.render('login');
+module.exports.show = (req, res) => res.render('login');
