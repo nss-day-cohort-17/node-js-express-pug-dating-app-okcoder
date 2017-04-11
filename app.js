@@ -15,16 +15,25 @@ const routes = require('./routes/')
 // pug configuration
 app.set('view engine', 'pug');
 
-app.locals.company = "okCoder";
+app.locals.website = "okCoder";
 app.locals.errors = {};
 app.locals.body = {};
 app.locals.body.magic = "Foooooo!";
 
 app.use(express.static('public'));
 
-app.use('/',(req, res, next) => {
+app.get('/',(req, res, next) => {
     res.render('index');
 });
+
+app.get('/register/profile',(req, res, next) => {
+    res.render('register');
+});
+
+app.get('/register/preferences',(req, res, next) => {
+    res.render('dateForm');
+});
+
 
 const port = process.env.PORT || 8080;
 app.listen(port, () => {
