@@ -1,0 +1,82 @@
+extends partials/layout.pug
+
+block content
+  .heading
+    h1 Register
+    if msg
+      h2= msg
+  .login-form
+    form(method="POST")
+      .form-group
+        label(for='name') Name
+        input.form-control#name(
+          type='text'
+          name='name'
+          placeholder='First and Last name'
+          required
+        )
+      .form-group
+        label(for='age') Age
+        input.form-control#age(
+          type='text'
+          name='age'
+          required
+        )
+      .form-group
+        label(for='gender') Gender
+        select.form-control#gender(
+          name='gender'
+          required
+        )
+          option male
+          option female
+          option other
+      .form-group
+        label(for='username') Username
+        input.form-control#age(
+          type='text'
+          name='username'
+          required
+        )
+      .form-group
+        label(for='email') Email Address
+        input.form-control#email(
+          type='email'
+          name='email'
+          placeholder='you@example.com'
+          required
+        )
+      .form-group
+        label(for='phone') Phone Number
+        input.form-control#email(
+          type='phone'
+          name='phone'
+          placeholder='you@example.com'
+          required
+        )
+      .form-group
+        label(for='password') Password
+        input.form-control#password(
+          type='password'
+          name='password'
+          placeholder='*********'
+          required
+        )
+      .form-group
+        label(for='confirmation') Password Confirmation
+        input.form-control#confirmation(
+          type='password'
+          name='confirmation'
+          placeholder='*********'
+          required
+        )
+      .form-group
+        label(for='bio') Short Bio
+        textarea.form-control(
+          name='bio'
+          placeholder='A little blurb about yourself...'
+          required
+        )
+      .contact-form__submit
+        a.btn.btn-danger.btn-lg(href='/') Cancel
+        input.btn.btn-success.btn-lg(type='submit' value='Register')

@@ -9,8 +9,9 @@ const KnexSessionStore = require('connect-session-knex')(session);
 const cookieParser = require('cookie-parser');
 const flash = require('express-flash');
 const { knex } = require('./db/database');
-
 const routes = require('./routes/')
+
+const user = require('./controllers/registerCtrl')
 
 // pug configuration
 app.set('view engine', 'pug');
@@ -20,11 +21,50 @@ app.locals.errors = {};
 app.locals.body = {};
 app.locals.body.magic = "Foooooo!";
 
-app.use(express.static('public'));
+app.use(cookieParser('secretpizza'));
+app.use(session({cookie: {maxAge: 60000}, secret: 'secretpizza', resave: true, saveUninitialized: false}));
+app.use(flash());
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(session({
+  store: new KnexSessionStore({
+    knex,
+    tablename: 'sessions'
+  }),
+  resave: false,
+  saveUninitialized: false,
+  secret: process.env.SESSION_SECRET || 'pizzashacksupersecretkey'
+}));
 
-app.use('/',(req, res, next) => {
+require('./lib/passport-strategies')
+app.use(passport.initialize())
+app.use(passport.session())
+
+app.use( (req, res, next) => {
+  app.locals.email = req.user && req.user.email
+  next()
+})
+
+app.use(express.static('public'));
+// app.use(routes)
+
+app.get('/',(req, res, next) => {
     res.render('index');
 });
+
+app.get('/register/profile',(req, res, next) => {
+    res.render('register');
+});
+
+app.get('/register/preferences',(req, res, next) => {
+    res.render('dateForm');
+});
+
+app.post('/register/profile', (req, res, next) => {
+    user.create(req, res)
+    // res.render('register');
+});
+
+
 
 const port = process.env.PORT || 8080;
 app.listen(port, () => {
