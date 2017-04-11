@@ -1,0 +1,13 @@
+extends partials/layout.pug
+
+block content
+  .Login__container
+    h1.Login__container__center True love awaits
+    h1.Login__container__center Login to find yours today
+    input.Login__container__center.Login__input(type='text' placeholder='username')
+    input.Login__container__center.Login__input(type='text' placeholder='password')
+    button.Login__container__center.Login__button.btn.btn-success(type='button') Login
+  .Login__register
+    p New user?
+    a(href="/register/profile") register
+  h1.Login__slogan love does compute

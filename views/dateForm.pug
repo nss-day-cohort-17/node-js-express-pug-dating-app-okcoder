@@ -1,0 +1,80 @@
+extends partials/layout.pug
+
+block content
+  .heading
+    h1 Register
+    if msg
+      h2= msg
+  .login-form
+    form(method="POST")
+      .form-group
+        label(for='genderPref') Gender Preferences
+        select.form-control#gen(
+          type='text'
+          name='genderPref'
+          required
+        )
+          option male
+          option female
+          option other
+      .form-group
+        label(for='age') Dogs or Cats?
+        select.form-control#pets(
+          type='text'
+          name='pet'
+          required
+        )
+          option dog
+          option cat
+          option no pets
+      .form-group
+        label(for='gender') Gender
+        select.form-control#gender(
+          name='gender'
+          required
+        )
+          option male
+          option female
+          option other
+      .form-group
+        label(for='smoker') Smoker?
+        select.form-control#smoke(
+          name='smoker'
+          required
+        )
+          option no
+          option yes
+      .form-group
+        label(for='language') Preferred Computer Language?
+        input.form-control#language(
+          type='text'
+          name='language'
+          placeholder='you@example.com'
+          required
+        )
+      .form-group
+        label(for='tabspace') Tabs or Spaces?
+        select.form-control#tabs(
+          type='text'
+          name='tabspace'
+          required
+        )
+          option tabs
+          option spaces
+      .form-group
+        label(for='editor') Preferred Text Editor?
+        input.form-control#editor(
+          type='text'
+          name='editor'
+          required
+        )
+      .form-group
+        label(for='os') Preferred Operating System?
+        input.form-control#confirmation(
+          type='text'
+          name='os'
+          required
+        )
+      .contact-form__submit
+        a.btn.btn-danger.btn-lg(href='/') Cancel
+        input.btn.btn-success.btn-lg(type='submit' value='Update Profile!')

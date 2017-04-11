@@ -1,3 +1,6 @@
+body {
+  background-color: black;
+}
 /****** NAVBAR ******/
 .navbar {
   display: flex;
@@ -12,6 +15,7 @@
   padding: 0.1em 1.5em;
   background-color: #A7A7A7;
   color: black;
+  font-size: 1.4em;
 }
 
 .nav-button:hover {
@@ -98,4 +102,63 @@
 .profile__individual-question-container {
   margin-right: 1em;
   margin-bottom: 2em;
+}
+
+/***** LOGIN *****/
+.Login__container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 4em;
+  color: white;
+}
+
+.Login__container__center {
+  margin: auto;
+}
+
+.Login__input {
+  width: 15em;
+  margin-top: 0.5em;
+  border-radius: 5px;
+  padding-left: 1em;
+  font-size: 1.2em;
+}
+
+.Login__button {
+  width: 5em;
+  margin-top: 0.5em;
+  font-size: 1.2em;
+}
+
+.Login__slogan {
+  margin-top: 5em;
+}
+
+.Login__register {
+  display: flex;
+  justify-content: center;
+  margin-top: 1em;
+  color: white;
+}
+
+.Login__register a {
+  margin-left: 0.5em;
+  color: red !important;
+}
+
+/***** REGISTER *****/
+.container {
+  color: white;
+}
+
+.login-form {
+  background: gray;
+  width: 70%;
+  border-radius: 10px;
+  padding: 2em;
+}
+
+.Register__container {
+  display: flex;
+  justify-content: center;
 }
