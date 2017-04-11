@@ -44,10 +44,12 @@
 
 .Home__carousel_info-container {
   display: flex;
+  justify-content: space-between;
+  margin-top: 0.5em;
 }
 
 .Home__carousel_info-container button {
-  float: right;
+  height: 2em;
 }
 
 .Home__carouse_name-age-container {
