@@ -163,6 +163,48 @@ body {
   justify-content: center;
 }
 
+/***** PENDING *****/
+.Pending__container {
+  display: flex;
+}
+.Pending__left {
+  width: 50%;
+  margin: 1em;
+}
+.Pending__right {
+  width: 50%;
+  margin: 1em;
+}
+
+.Pending__box {
+  border: 2px solid red;
+  border-radius: 5px;
+  margin-top: 0.5em;
+  width: 100%;
+  padding: 0.2em;
+  background-color: #4E4E4E;
+}
+
+.Pending__box__img {
+  width: 33%;
+  padding: 0.2em;
+  display: inline-block;
+}
+
+.Pending__box__img img {
+  width: 100%;
+}
+
+.Pending__box__buttons {
+  display: flex;
+  margin-top: 0.2em;
+}
+
+.Pending__box__buttons button{
+  width: 50%;
+  font-size: 0.4em;
+  padding: 0.3em;
+}
 
 /***** FLOATING HEARTS ******/
 html, body {
