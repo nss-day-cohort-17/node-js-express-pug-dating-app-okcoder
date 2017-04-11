@@ -11,7 +11,7 @@ const flash = require('express-flash');
 const { knex } = require('./db/database');
 const routes = require('./routes/')
 
-const user = require('./controllers/registerCtrl')
+// const user = require('./controllers/registerCtrl')
 
 // pug configuration
 app.set('view engine', 'pug');
@@ -47,23 +47,25 @@ app.use( (req, res, next) => {
 app.use(express.static('public'));
 // app.use(routes)
 
-app.get('/',(req, res, next) => {
-    res.render('index');
-});
+// app.get('/',(req, res, next) => {
+//     res.render('index');
+// });
 
-app.get('/register/profile',(req, res, next) => {
-    res.render('register');
-});
+// app.get('/register/profile',(req, res, next) => {
+//     res.render('register');
+// });
 
-app.get('/register/preferences',(req, res, next) => {
-    res.render('dateForm');
-});
+// app.get('/register/preferences',(req, res, next) => {
+//     res.render('dateForm');
+// });
 
-app.post('/register/profile', (req, res, next) => {
-    user.create(req, res)
-    // res.render('register');
-});
+// app.post('/register/profile', (req, res, next) => {
+//     user.create(req, res)
+//     // res.render('register');
+// });
 
+
+app.use(routes)
 
 
 const port = process.env.PORT || 8080;
