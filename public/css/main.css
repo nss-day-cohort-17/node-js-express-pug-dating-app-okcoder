@@ -1,0 +1,70 @@
+/****** NAVBAR ******/
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  margin: 0 1em;
+}
+
+.nav-button {
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 0.1em 1.5em;
+  background-color: #A7A7A7;
+  color: black;
+}
+
+.nav-button:hover {
+  text-decoration: none;
+  color: red;
+}
+
+/***** INDEX *****/
+.Home__header {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5em;
+}
+
+.carousel {
+  background-color: #4E4E4E
+}
+
+.Home___carousel__img-container {
+  display: flex;
+  padding: 4em;
+  justify-content: center;
+}
+
+.Home__carousel__img-connect {
+  width: 30%;
+  height: 90%;
+  margin: 0.5em;
+}
+
+.Home__carousel_info-container {
+  display: flex;
+}
+
+.Home__carousel_info-container button {
+  float: right;
+}
+
+.Home__carouse_name-age-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.Home___carousel__img {
+  /*width: 30%;
+  height: 90%;
+  margin: 0.5em;*/
+}
+
+.carousel-control-prev {
+  left: -2em;
+}
+
+.carousel-control-next {
+  right: -2em;
+}

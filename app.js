@@ -15,7 +15,7 @@ const routes = require('./routes/')
 // pug configuration
 app.set('view engine', 'pug');
 
-app.locals.company = "okCoder";
+app.locals.website = "okCoder";
 app.locals.errors = {};
 app.locals.body = {};
 app.locals.body.magic = "Foooooo!";
