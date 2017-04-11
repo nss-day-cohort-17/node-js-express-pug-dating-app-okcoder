@@ -2,7 +2,7 @@
 
 const { Router } = require('express')
 
-const user = require('../controllers/homeCtrl')
+const { show } = require('../controllers/homeCtrl')
 
 const router = Router()
 
