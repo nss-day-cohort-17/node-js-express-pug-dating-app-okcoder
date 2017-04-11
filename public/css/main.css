@@ -70,3 +70,32 @@
 .carousel-control-next {
   right: -2em;
 }
+
+/******* PROFILE *********/
+
+.profile__container  {
+  margin-top: 1em;
+  color: white;
+}
+
+.profile__left-column-data-container {
+  display: flex;
+  margin-top: 1em;
+}
+
+.profile__personal-info-header {
+  margin-right: 20%;
+}
+
+.profile__right-column {
+  border: 1px solid black;
+}
+
+.profile__questions-container {
+  display: flex;
+}
+
+.profile__individual-question-container {
+  margin-right: 1em;
+  margin-bottom: 2em;
+}
