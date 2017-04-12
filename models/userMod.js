@@ -20,7 +20,6 @@ const User = bookshelf.Model.extend({
       return user;
     })
     .catch( () => {
-      console.log("yup, this happens when no email");
       return (null)
     });
   }
