@@ -5,15 +5,29 @@ module.exports.show = (req, res) => {
   res.render('register', { page: 'Register'});
 }
 
-module.exports.create = ({body: {email, password, confirmation, name, age, phone, username, bio, gender}}, res) => {
-  if (password === confirmation) {
-    User.findOneByEmail(email)
+module.exports.create = (req, res) => {
+  if (req.body.password === req.body.confirmation) {
+    User.findOneByEmail(req.body.email)
     .then( (user) => {
       if (user) return res.render('register', { msg: 'Email is already registered'});
-      return User.forge({email, password, name, age, phone, username, bio, gender})
+       User.forge({
+        email: req.body.email, 
+        password: req.body.password, 
+        name: req.body.name, 
+        age: req.body.age, 
+        phone: req.body.phone, 
+        username: req.body.username, 
+        bio: req.body.bio, 
+        gender: req.body.gender
+      })
       .save()
       .then( () => {
-        res.redirect('/register/preferences')
+        User.findOneByEmail(req.body.email)
+          .then(user => {
+            console.log(user.id)
+            req.flash('id', user.id);
+            res.redirect('/register/preferences')
+          })
       })
       // catch for save()
       .catch( (err) => res.render('register', {msg: "Dang. There was probz. Try again."}));

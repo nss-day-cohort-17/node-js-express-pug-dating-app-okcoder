@@ -21,8 +21,8 @@ app.locals.errors = {};
 app.locals.body = {};
 app.locals.body.magic = "Foooooo!";
 
-app.use(cookieParser('secretpizza'));
-app.use(session({cookie: {maxAge: 60000}, secret: 'secretpizza', resave: true, saveUninitialized: false}));
+app.use(cookieParser('okCoder'));
+app.use(session({cookie: {maxAge: 60000}, secret: 'okCoder', resave: true, saveUninitialized: false}));
 app.use(flash());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(session({
@@ -32,17 +32,17 @@ app.use(session({
   }),
   resave: false,
   saveUninitialized: false,
-  secret: process.env.SESSION_SECRET || 'pizzashacksupersecretkey'
+  secret: process.env.SESSION_SECRET || 'okcodersecretkey'
 }));
 
-require('./lib/passport-strategies')
-app.use(passport.initialize())
-app.use(passport.session())
+// require('./lib/passport-strategies')
+// app.use(passport.initialize())
+// app.use(passport.session())
 
-app.use( (req, res, next) => {
-  app.locals.email = req.user && req.user.email
-  next()
-})
+// app.use( (req, res, next) => {
+//   app.locals.email = req.user && req.user.email
+//   next()
+// })
 
 app.use(express.static('public'));
 
