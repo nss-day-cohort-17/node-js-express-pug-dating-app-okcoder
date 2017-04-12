@@ -9,7 +9,7 @@ const KnexSessionStore = require('connect-session-knex')(session);
 const cookieParser = require('cookie-parser');
 const flash = require('express-flash');
 const { knex } = require('./db/database');
-const routes = require('./routes/')
+const routes = require('./routes/');
 
 // const user = require('./controllers/registerCtrl')
 
