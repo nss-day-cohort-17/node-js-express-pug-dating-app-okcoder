@@ -24,8 +24,7 @@ module.exports.create = (req, res) => {
       .then( () => {
         User.findOneByEmail(req.body.email)
           .then(user => {
-            console.log(user.id)
-            req.flash('id', user.id);
+            req.flash('email', req.body.email);
             res.redirect('/register/preferences')
           })
       })
