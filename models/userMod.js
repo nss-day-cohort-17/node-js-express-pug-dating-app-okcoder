@@ -7,8 +7,8 @@ const User = bookshelf.Model.extend({
   tableName: 'users',
   bcrypt: { field: 'password' },
   comparePass: function (passwordStr) {
-    console.log("password String from user", passwordStr );
-    console.log("user", this.attributes);
+    // console.log("password String from user", passwordStr );
+    // console.log("user", this.attributes);
     return compare(passwordStr, this.attributes.password)
   }
 }, {
@@ -16,7 +16,6 @@ const User = bookshelf.Model.extend({
     return this.forge({email})
     .fetch()
     .then( (user) => {
-      console.log("Got User", user.get('email'));
       return user;
     })
     .catch( () => {
