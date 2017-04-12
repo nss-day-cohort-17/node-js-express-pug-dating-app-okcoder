@@ -2,11 +2,11 @@
 
 const { Router } = require('express')
 
-const { show, updatePrefs } = require('../controllers/dateFormCtrl')
+const { show, updateProfile} = require('../controllers/dateFormCtrl')
 
 const router = Router()
 
 router.get('/register/preferences', show)
-router.post('/register/preferences', updatePrefs)
+router.post('/register/preferences', updateProfile)
 
 module.exports = router

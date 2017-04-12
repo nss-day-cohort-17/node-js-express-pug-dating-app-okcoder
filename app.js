@@ -11,8 +11,6 @@ const flash = require('express-flash');
 const { knex } = require('./db/database');
 const routes = require('./routes/');
 
-// const user = require('./controllers/registerCtrl')
-
 // pug configuration
 app.set('view engine', 'pug');
 
@@ -35,14 +33,14 @@ app.use(session({
   secret: process.env.SESSION_SECRET || 'okcodersecretkey'
 }));
 
-// require('./lib/passport-strategies')
-// app.use(passport.initialize())
-// app.use(passport.session())
+require('./lib/passport-strategies')
+app.use(passport.initialize())
+app.use(passport.session())
 
-// app.use( (req, res, next) => {
-//   app.locals.email = req.user && req.user.email
-//   next()
-// })
+app.use( (req, res, next) => {
+  app.locals.email = req.user && req.user.email
+  next()
+})
 
 app.use(express.static('public'));
 

@@ -7,7 +7,7 @@ exports.up = (knex, Promise) => {
     table.string('password').notNullable();
     table.string('name').notNullable();
     table.integer('age').notNullable();
-    table.integer('phone').notNullable();
+    table.string('phone').notNullable();
     table.string('username').notNullable();
     table.string('bio').notNullable();
     table.string('gender').notNullable();
