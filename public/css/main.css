@@ -6,6 +6,10 @@ body {
   font-family: 'Pinyon Script', cursive;
 }
 
+.active_nav {
+  background-color: #5BC45A !important;
+}
+
 /****** NAVBAR ******/
 .navbar {
   display: flex;

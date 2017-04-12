@@ -8,3 +8,4 @@ module.exports.show = (req, res) => {
     res.render('profile', {user: user.toJSON()});
   })
 }
+
