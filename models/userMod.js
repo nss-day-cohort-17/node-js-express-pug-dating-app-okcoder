@@ -5,7 +5,7 @@ const { compare } = require('bcryptjs');
 
 const User = bookshelf.Model.extend({
   tableName: 'users',
-  bcrypt: { field: 'password'},
+  bcrypt: { field: 'password' },
   comparePass: function (passwordStr) {
     console.log("password String from user", passwordStr );
     console.log("user", this.attributes);
