@@ -1,4 +1,4 @@
 'use strict';
 
 module.exports.show = (req, res) =>
-  res.render('matches');
+  res.render('matches', {page: 'Matches'});
