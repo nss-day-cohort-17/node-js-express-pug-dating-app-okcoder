@@ -1,0 +1,36 @@
+extends partials/layout.pug
+
+block content
+  h1.Home__header Check out your matches!
+
+  #carouselExampleIndicators(class="carousel slide" data-ride="carousel")
+    ol.carousel-indicators
+      li(data-target="#carouselExampleIndicators" data-slide-to="0" class="active")
+    .carousel-inner(role="listbox")
+      .carousel-item.active
+        .Home___carousel__img-container
+          .Home__carousel__img-connect
+            img.d-block.img-fluid.Home___carousel__img(src="/images/charlie.png" alt="First slide")
+            .Home__carousel_info-container
+              .Home__carouse_name-age-container
+                h5 Name
+                h5 555-555-5555
+          .Home__carousel__img-connect
+            img.d-block.img-fluid.Home___carousel__img(src="/images/terrill.png" alt="First slide")
+            .Home__carousel_info-container
+              .Home__carouse_name-age-container
+                h5 Name
+                h5 222-222-2222
+          .Home__carousel__img-connect
+            img.d-block.img-fluid.Home___carousel__img(src="/images/jared.png" alt="First slide")
+            .Home__carousel_info-container
+              .Home__carouse_name-age-container
+                h5 Name
+                h5 111-111-1111
+
+    a.carousel-control-prev(href="#carouselExampleIndicators" role="button" data-slide="prev")
+      span.carousel-control-prev-icon(aria-hidden="true")
+      span.sr-only Previous
+    a.carousel-control-next(href="#carouselExampleIndicators" role="button" data-slide="next")
+      span.carousel-control-next-icon(aria-hidden="true")
+      span.sr-only Next

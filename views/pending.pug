@@ -1,0 +1,35 @@
+extends partials/layout.pug
+
+block content
+  h1.Home__header Touching Hands,
+  .Pending__container
+    h3.Pending__left Touching me, (these people like you...)
+      .Pending__box
+        .Pending__box__img
+          img(src="/images/peter.png" alt="match one")
+          .Pending__box__buttons
+            button(type="button" class="btn btn-danger") ignore
+            button(type="button" class="btn btn-success") connect
+        .Pending__box__img
+          img(src="/images/priya.png" alt="match one")
+          .Pending__box__buttons
+            button(type="button" class="btn btn-danger") ignore
+            button(type="button" class="btn btn-success") connect
+        .Pending__box__img
+          img(src="/images/michael.png" alt="match one")
+          .Pending__box__buttons
+            button(type="button" class="btn btn-danger") ignore
+            button(type="button" class="btn btn-success") connect
+        .Pending__box__img
+          img(src="/images/joel.png" alt="match one")
+          .Pending__box__buttons
+            button(type="button" class="btn btn-danger") ignore
+            button(type="button" class="btn btn-success") connect
+    h3.Pending__right Touching you, (you like these people...)
+      .Pending__box
+        .Pending__box__img
+          img(src="/images/jared.png" alt="match one")
+        .Pending__box__img
+          img(src="/images/charlie.png" alt="match one")
+        .Pending__box__img
+          img(src="/images/sorrel.png" alt="match one")
