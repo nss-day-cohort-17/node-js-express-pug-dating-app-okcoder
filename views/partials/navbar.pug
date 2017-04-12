@@ -3,4 +3,7 @@
   a(href='/matches').nav-button matches
   a(href='/pending').nav-button pending
   a(href='/profile').nav-button profile
-  a(href='/login').nav-button login
+  if email
+    a(href='/logout') #{email}
+  else
+    a(href='/login').nav-button login

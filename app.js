@@ -39,6 +39,7 @@ app.use(passport.session())
 
 app.use( (req, res, next) => {
   app.locals.email = req.user && req.user.email
+  console.log(app.locals.email, 'email')
   next()
 })
 
