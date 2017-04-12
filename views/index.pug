@@ -1,62 +1,69 @@
 extends partials/layout.pug
 
 block content
-  h1.Home__header Check out the candidates!
+  .wrapper
+    h1.Home__header Check out the candidates!
 
-  #carouselExampleIndicators(class="carousel slide" data-ride="carousel")
-    ol.carousel-indicators
-      li(data-target="#carouselExampleIndicators" data-slide-to="0" class="active")
-      li(data-target="#carouselExampleIndicators" data-slide-to="1")
-    .carousel-inner(role="listbox")
-      .carousel-item.active
-        .Home___carousel__img-container
-          .Home__carousel__img-connect
-            img.d-block.img-fluid.Home___carousel__img(src="/images/charlie.png" alt="First slide")
-            .Home__carousel_info-container
-              .Home__carouse_name-age-container
-                h5 Name
-                h5 Age
-              button(type="button" class="btn btn-success") Connect
-          .Home__carousel__img-connect
-            img.d-block.img-fluid.Home___carousel__img(src="/images/terrill.png" alt="First slide")
-            .Home__carousel_info-container
-              .Home__carouse_name-age-container
-                h5 Name
-                h5 Age
-              button(type="button" class="btn btn-success") Connect
-          .Home__carousel__img-connect
-            img.d-block.img-fluid.Home___carousel__img(src="/images/jared.png" alt="First slide")
-            .Home__carousel_info-container
-              .Home__carouse_name-age-container
-                h5 Name
-                h5 Age
-              button(type="button" class="btn btn-success") Connect
-      .carousel-item
-        .Home___carousel__img-container
-          .Home__carousel__img-connect
-            img.d-block.img-fluid.Home___carousel__img(src="/images/james.png" alt="Second slide")
-            .Home__carousel_info-container
-              .Home__carouse_name-age-container
-                h5 Name
-                h5 Age
-              button(type="button" class="btn btn-success") Connect
-          .Home__carousel__img-connect
-            img.d-block.img-fluid.Home___carousel__img(src="/images/michael.png" alt="Second slide")
-            .Home__carousel_info-container
-              .Home__carouse_name-age-container
-                h5 Name
-                h5 Age
-              button(type="button" class="btn btn-success") Connect
-          .Home__carousel__img-connect
-            img.d-block.img-fluid.Home___carousel__img(src="/images/joel.png" alt="Second slide")
-            .Home__carousel_info-container
-              .Home__carouse_name-age-container
-                h5 Name
-                h5 Age
-              button(type="button" class="btn btn-success") Connect
-    a.carousel-control-prev(href="#carouselExampleIndicators" role="button" data-slide="prev")
-      span.carousel-control-prev-icon(aria-hidden="true")
-      span.sr-only Previous
-    a.carousel-control-next(href="#carouselExampleIndicators" role="button" data-slide="next")
-      span.carousel-control-next-icon(aria-hidden="true")
-      span.sr-only Next
+    #carouselExampleIndicators(class="carousel slide" data-ride="carousel")
+      ol.carousel-indicators
+        li(data-target="#carouselExampleIndicators" data-slide-to="0" class="active")
+        li(data-target="#carouselExampleIndicators" data-slide-to="1")
+      .carousel-inner(role="listbox")
+        .carousel-item.active
+          .Home___carousel__img-container
+            .Home__carousel__img-connect
+              img.d-block.img-fluid.Home___carousel__img(src="/images/charlie.png" alt="First slide")
+              .Home__carousel_info-container
+                .Home__carouse_name-age-container
+                  h5 Name
+                  h5 Age
+                button(type="button" class="btn btn-success") Connect
+            .Home__carousel__img-connect
+              img.d-block.img-fluid.Home___carousel__img(src="/images/terrill.png" alt="First slide")
+              .Home__carousel_info-container
+                .Home__carouse_name-age-container
+                  h5 Name
+                  h5 Age
+                button(type="button" class="btn btn-success") Connect
+            .Home__carousel__img-connect
+              img.d-block.img-fluid.Home___carousel__img(src="/images/jared.png" alt="First slide")
+              .Home__carousel_info-container
+                .Home__carouse_name-age-container
+                  h5 Name
+                  h5 Age
+                button(type="button" class="btn btn-success") Connect
+        .carousel-item
+          .Home___carousel__img-container
+            .Home__carousel__img-connect
+              img.d-block.img-fluid.Home___carousel__img(src="/images/james.png" alt="Second slide")
+              .Home__carousel_info-container
+                .Home__carouse_name-age-container
+                  h5 Name
+                  h5 Age
+                button(type="button" class="btn btn-success") Connect
+            .Home__carousel__img-connect
+              img.d-block.img-fluid.Home___carousel__img(src="/images/michael.png" alt="Second slide")
+              .Home__carousel_info-container
+                .Home__carouse_name-age-container
+                  h5 Name
+                  h5 Age
+                button(type="button" class="btn btn-success") Connect
+            .Home__carousel__img-connect
+              img.d-block.img-fluid.Home___carousel__img(src="/images/joel.png" alt="Second slide")
+              .Home__carousel_info-container
+                .Home__carouse_name-age-container
+                  h5 Name
+                  h5 Age
+                button(type="button" class="btn btn-success") Connect
+      a.carousel-control-prev(href="#carouselExampleIndicators" role="button" data-slide="prev")
+        span.carousel-control-prev-icon(aria-hidden="true")
+        span.sr-only Previous
+      a.carousel-control-next(href="#carouselExampleIndicators" role="button" data-slide="next")
+        span.carousel-control-next-icon(aria-hidden="true")
+        span.sr-only Next
+    .heart.x1
+    .heart.x2
+    .heart.x3
+    .heart.x4
+    .heart.x5
+    .altheart.x6
