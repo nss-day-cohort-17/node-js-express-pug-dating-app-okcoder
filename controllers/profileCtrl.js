@@ -2,6 +2,9 @@
 
 const User = require('../models/userMod')
 const { getUser } = require('./matchesCtrl')
+const Like = require('../models/likesMod')
+const Match = require('../models/matchesMod')
+
 
 module.exports.show = (req, res) => {
   User.findOneByEmail(res.locals.email)
