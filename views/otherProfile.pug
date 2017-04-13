@@ -1,0 +1,55 @@
+extends partials/layout.pug
+
+block content
+  .container.profile__container
+    .row
+      .profile__left-column.col.col-lg-4
+        img(src= user.photo)
+        .profile__left-column-data-container
+          .profile__personal-info-header
+            h5 Name:
+            h5 Age:
+            h5 Username:
+          .profile__personal-info-data
+            h5= user.name
+            h5= user.age
+            h5= user.username
+      .profile__right-column.col.col-lg-8
+        .profile__about-container
+          h3 About
+          p= user.bio
+        .profile__preferences-container
+          .h3 Preferences
+          .profile__questions-container
+            .profile__individual-question-container
+              p Preferred gender for a partner?
+              .form-check
+                label.form-check-label 
+                  span= user.genderPref
+            .profile__individual-question-container
+              p Favorite pet?
+              .form-check
+                label.form-check-label 
+                  span= user.pet
+            .profile__individual-question-container
+              p Smoker?
+              .form-check
+                label.form-check-label 
+                  span= user.smoker
+            .profile__individual-question-container
+              p Favorite Language?
+              p= user.language
+          .profile__questions-container
+            .profile__individual-question-container
+              p Tabs or Spaces?
+              .form-check
+                label.form-check-label 
+                  span= user.tabspace
+            .profile__individual-question-container
+              p Favorite Editor?
+              p= user.editor
+            .profile__individual-question-container
+              p Operating System?
+              p= user.os
+      form(method='POST')
+        button(type="submit" class="btn btn-success") Connect

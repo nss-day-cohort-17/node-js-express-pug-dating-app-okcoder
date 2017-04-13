@@ -37,7 +37,7 @@ module.exports.show = (req, res) => {
 }
 
 
-
+module.exports.getUser = getUser
 
 
 

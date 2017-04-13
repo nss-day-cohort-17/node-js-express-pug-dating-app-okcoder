@@ -20,9 +20,6 @@ const GetWhereUserIsLiked = (userId) => {
   return Likes.forge().where('likee', userId).fetch({columns: ['liker', 'likee']})
 }
 
-module.exports.show = (req, res) => res.render('index');
-
-
 module.exports.likeUser = ({ body, flash }, res, err) => {
   GetWhereUserIsLiked(body.userId)
     .then( (user) => user.toJSON())
