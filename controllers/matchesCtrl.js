@@ -30,7 +30,7 @@ module.exports.show = (req, res) => {
       })
       Promise.all(userMatchIds.map((id) => {
         return getUser(id)
-      }))
+      })) 
       .then((users) => {
         console.log(users, 'users')
         res.render('matches', {page: 'Matches', users});
