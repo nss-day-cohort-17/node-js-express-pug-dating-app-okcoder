@@ -52,6 +52,8 @@ module.exports.likeUser = (req, res, err) => {
           .save()
           .then( () => {
             console.log('done with like')
+            req.flash('msg', "Congrats, you have successfully liked them")
+            res.redirect(`/profile/${req.params.id}`)
           })
       }
     })
