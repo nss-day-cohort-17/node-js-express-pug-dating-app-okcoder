@@ -6,4 +6,5 @@ const Match = bookshelf.Model.extend({
   tableName: 'matches'
 })
 
+
 module.exports = Match;
