@@ -9,20 +9,15 @@ block content
     .carousel-inner(role="listbox")
       .carousel-item.active
         .Home___carousel__img-container
+          each user in users
+            .Home__carousel__img-connect
+              img.d-block.img-fluid.Home___carousel__img(src= user.photo)
+              .Home__carousel_info-container
+                .Home__carouse_name-age-container
+                  h5= user.name
+                  h5= user.phone
           .Home__carousel__img-connect
-            img.d-block.img-fluid.Home___carousel__img(src="/images/charlie.png" alt="First slide")
-            .Home__carousel_info-container
-              .Home__carouse_name-age-container
-                h5 Name
-                h5 555-555-5555
-          .Home__carousel__img-connect
-            img.d-block.img-fluid.Home___carousel__img(src="/images/terrill.png" alt="First slide")
-            .Home__carousel_info-container
-              .Home__carouse_name-age-container
-                h5 Name
-                h5 222-222-2222
-          .Home__carousel__img-connect
-            img.d-block.img-fluid.Home___carousel__img(src="/images/jared.png" alt="First slide")
+            img.d-block.img-fluid.Home___carousel__img(src="/images/jared.png")
             .Home__carousel_info-container
               .Home__carouse_name-age-container
                 h5 Name

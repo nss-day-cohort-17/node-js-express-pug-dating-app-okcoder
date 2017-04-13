@@ -3,4 +3,7 @@
   a(href='/matches' class={active_nav: page === 'Matches'}).nav-button matches
   a(href='/pending' class={active_nav: page === 'Pending'}).nav-button pending
   a(href='/profile' class={active_nav: page === 'Profile'}).nav-button profile
-  a(href='/login' class={active_nav: page === 'Login'}).nav-button login
+  if email
+    a(href='/logout') #{email}
+  else
+    a(href='/login' class={active_nav: page === 'Login'}).nav-button login

@@ -18,14 +18,14 @@ module.exports.create = (req, res) => {
         phone: req.body.phone,
         username: req.body.username,
         bio: req.body.bio,
-        gender: req.body.gender
+        gender: req.body.gender,
+        photo: req.body.photo
       })
       .save()
       .then( () => {
         User.findOneByEmail(req.body.email)
           .then(user => {
-            console.log(user.id)
-            req.flash('id', user.id);
+            req.flash('email', req.body.email);
             res.redirect('/register/preferences')
           })
       })
