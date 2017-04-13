@@ -5,6 +5,8 @@ block content
     h1.Home__header Check out the candidates!
 
     #carouselExampleIndicators(class="carousel slide" data-ride="carousel")
+      each user in users
+        h1= user.name
       ol.carousel-indicators
         li(data-target="#carouselExampleIndicators" data-slide-to="0" class="active")
         li(data-target="#carouselExampleIndicators" data-slide-to="1")

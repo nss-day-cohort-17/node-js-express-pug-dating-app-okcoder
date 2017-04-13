@@ -4,20 +4,20 @@ block content
   .container.profile__container
     .row
       .profile__left-column.col.col-lg-4
-        img(src='images/terrill.png')
+        img(src= user.photo)
         .profile__left-column-data-container
           .profile__personal-info-header
             h5 Name:
             h5 Age:
             h5 Username:
           .profile__personal-info-data
-            h5 terrill
-            h5 22
-            h5 tdog
+            h5= user.name
+            h5= user.age
+            h5= user.username
       .profile__right-column.col.col-lg-8
         .profile__about-container
           h3 About
-          p Four dollar toast ethical cliche tousled retro, kinfolk poke banh mi. Hot chicken cray XOXO, distillery af listicle whatever drinking vinegar literally. Mumblecore copper mug deep v freegan subway tile celiac, man braid coloring book tofu asymmetrical hexagon flexitarian. YOLO blog put a bird on it tousled, live-edge kickstarter keffiyeh etsy hot chicken readymade. PBR&B drinking vinegar trust fund, swag four loko tilde try-hard banh mi whatever yr 3 wolf moon skateboard. Kinfolk irony portland, succulents offal swag YOLO health goth bicycle rights pitchfork. Poutine craft beer tousled next level farm-to-table.
+          p= user.bio
         .profile__preferences-container
           .h3 Preferences
           .profile__questions-container
@@ -25,51 +25,29 @@ block content
               p Preferred gender for a partner?
               .form-check
                 label.form-check-label 
-                  input.form-check-input(type='radio' name='gender' id='exampleRadios1' value='option1')
-                  span Male
-              .form-check    
-                label.form-check-label 
-                  input.form-check-input(type='radio' name='gender' id='exampleRadios1' value='option2')
-                  span Female
+                  span= user.genderPref
             .profile__individual-question-container
               p Favorite pet?
               .form-check
                 label.form-check-label 
-                  input.form-check-input(type='radio' name='pet' id='exampleRadios1' value='option1')
-                  span Dog
-              .form-check    
-                label.form-check-label 
-                  input.form-check-input(type='radio' name='pet' id='exampleRadios1' value='option2')
-                  span Cat
+                  span= user.pet
             .profile__individual-question-container
-              p Smoking?
+              p Smoker?
               .form-check
                 label.form-check-label 
-                  input.form-check-input(type='radio' name='smoking' id='exampleRadios1' value='option1')
-                  span Yes
-              .form-check    
-                label.form-check-label 
-                  input.form-check-input(type='radio' name='smoking' id='exampleRadios1' value='option2')
-                  span No
+                  span= user.smoker
             .profile__individual-question-container
               p Favorite Language?
-              p Javascript
+              p= user.language
           .profile__questions-container
             .profile__individual-question-container
               p Tabs or Spaces?
               .form-check
                 label.form-check-label 
-                  input.form-check-input(type='radio' name='tabspace' id='exampleRadios1' value='option1')
-                  span Tabs
-              .form-check    
-                label.form-check-label 
-                  input.form-check-input(type='radio' name='tabspace' id='exampleRadios1' value='option2')
-                  span Spaces
+                  span= user.tabspace
             .profile__individual-question-container
               p Favorite Editor?
-              p Sublime
+              p= user.editor
             .profile__individual-question-container
               p Operating System?
-              p MacOSX
-        
-          
+              p= user.os

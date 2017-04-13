@@ -1,12 +1,15 @@
 extends partials/layout.pug
 
 block content
-  .Login__container
-    h1.Login__container__center.cursive True love awaits
-    h1.Login__container__center.cursive Login to find yours today
-    input.Login__container__center.Login__input(type='text' placeholder='username')
-    input.Login__container__center.Login__input(type='text' placeholder='password')
-    button.Login__container__center.Login__button.btn.btn-success(type='button') Login
+  if msg
+    h2= msg
+  form(method='POST')
+    .Login__container
+      h1.Login__container__center.cursive True love awaits
+      h1.Login__container__center.cursive Login to find yours today
+      input.Login__container__center.Login__input(type='email' name='email' placeholder='email')
+      input.Login__container__center.Login__input(type='password' name='password' placeholder='password')
+      button.Login__container__center.Login__button.btn.btn-success(type='submit') Login
   .Login__register
     p New user?
     a(href="/register/profile") register

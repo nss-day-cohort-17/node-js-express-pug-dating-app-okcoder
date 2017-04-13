@@ -1,4 +1,4 @@
 'use strict';
 
 module.exports.show = (req, res) =>
-  res.render('pending');
+  res.render('pending', {page: 'Pending'});

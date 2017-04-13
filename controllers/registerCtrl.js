@@ -11,21 +11,21 @@ module.exports.create = (req, res) => {
     .then( (user) => {
       if (user) return res.render('register', { msg: 'Email is already registered'});
        User.forge({
-        email: req.body.email, 
-        password: req.body.password, 
-        name: req.body.name, 
-        age: req.body.age, 
-        phone: req.body.phone, 
-        username: req.body.username, 
-        bio: req.body.bio, 
-        gender: req.body.gender
+        email: req.body.email,
+        password: req.body.password,
+        name: req.body.name,
+        age: req.body.age,
+        phone: req.body.phone,
+        username: req.body.username,
+        bio: req.body.bio,
+        gender: req.body.gender,
+        photo: req.body.photo
       })
       .save()
       .then( () => {
         User.findOneByEmail(req.body.email)
           .then(user => {
-            console.log(user.id)
-            req.flash('id', user.id);
+            req.flash('email', req.body.email);
             res.redirect('/register/preferences')
           })
       })
