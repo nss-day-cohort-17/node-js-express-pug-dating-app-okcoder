@@ -5,8 +5,8 @@ const passport = require('passport');
 
 module.exports.create = (req, res, next) => 
   passport.authenticate('local', (err, user, msg) => {
-    if (err) return next(err)
-    if (!user) return res.render('login', {page: "Login", msg: 'Sorry, We could not fnd a user with those credentials'} )
+    // if (err) return res.render('login', {page: "Login", msg: 'Sorry, We could not find a user with those credentials'})
+    if (!user) return res.render('login', {page: "Login", msg: 'Sorry, We could not find a user with those credentials'} )
     req.login(user, (err) => {
       if (err) return next(err)
       res.redirect('/')

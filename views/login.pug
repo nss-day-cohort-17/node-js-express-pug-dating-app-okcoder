@@ -1,6 +1,8 @@
 extends partials/layout.pug
 
 block content
+  if msg
+    h2= msg
   form(method='POST')
     .Login__container
       h1.Login__container__center.cursive True love awaits
