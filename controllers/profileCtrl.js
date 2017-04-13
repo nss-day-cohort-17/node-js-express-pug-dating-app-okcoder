@@ -42,6 +42,8 @@ module.exports.likeUser = (req, res, err) => {
           .save()
           .then( () => {
             console.log('done with match')
+            req.flash('msg', "Congrats, you two have matched. Invite OKCoder to the wedding")
+            res.redirect(`/profile/${req.params.id}`)
         })
       }
       else {
