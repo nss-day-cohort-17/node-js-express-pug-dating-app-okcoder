@@ -2,7 +2,7 @@
 
 const { bookshelf } = require('../db/database');
 
-const Matches = bookshelf.Model.extend({
+const Match = bookshelf.Model.extend({
   tableName: 'matches'
 })
 
