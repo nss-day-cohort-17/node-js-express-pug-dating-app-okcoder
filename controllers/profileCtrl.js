@@ -29,20 +29,13 @@ const GetWhereUserIsLiked = (userId, paramsId) => {
 }
 
 module.exports.likeUser = (req, res, err) => {
-  console.log("user", req.user.id)
-  console.log("params", req.params.id)
   GetWhereUserIsLiked(req.user.id, req.params.id)
     .then( (user) => {
-      console.log('user return', user)
-      // user.toJSON())
       if (user !== null) {
-        console.log('match stuff')
         return user.toJSON()
-        console.log("user.toJSON()", user.toJSON());
       }
     })
     .then( (user) => {
-      console.log('thenuser', user)
       if (user) {
         //match the users
         Match.forge({userOne: user.likee, userTwo: user.liker})
