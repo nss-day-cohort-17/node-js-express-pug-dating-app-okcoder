@@ -12,8 +12,6 @@ const getUser = (id) => {
   })
 }
 
-let results = (fn, id) => Promise.all(fn)
-
 module.exports.show = (req, res) => {
   let userMatches= [];
   let userMatchIds = [];
@@ -39,14 +37,7 @@ module.exports.show = (req, res) => {
 }
 
 
-
-
-
-
-
-
-
-
+module.exports.getUser = getUser
 
 
 

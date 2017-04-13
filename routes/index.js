@@ -18,6 +18,7 @@ router.use( (req, res, next) => {
 });
 
 // private routes
+router.use(require('./otherProfileRoute'))
 router.use(require('./logoutRoute'))
 router.use(require('./profileRoute'))
 router.use(require('./matchesRoute'))
