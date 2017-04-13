@@ -20,7 +20,7 @@ app.locals.body = {};
 app.locals.body.magic = "Foooooo!";
 
 app.use(cookieParser('okCoder'));
-app.use(session({cookie: {maxAge: 60000}, secret: 'okCoder', resave: true, saveUninitialized: false}));
+app.use(session({cookie: {maxAge: 600000}, secret: 'okCoder', resave: true, saveUninitialized: false}));
 app.use(flash());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(session({
@@ -39,7 +39,9 @@ app.use(passport.session())
 
 app.use( (req, res, next) => {
   app.locals.email = req.user && req.user.email
+  app.locals.id = req.user && req.user.id
   res.locals.email = app.locals.email
+  res.locals.id = app.locals.id
   next()
 })
 
