@@ -21,24 +21,24 @@ block content
                 .Home__carousel__img-connect
                   img.d-block.img-fluid.Home___carousel__img(src= users[index].photo alt="First slide")
                   .Home__carousel_info-container
-                    .Home__carouse_name-age-container
+                    .Home__carousel_name-age-container
                       h5= users[index].name
                       h5= users[index].age
-                    a.btn.btn-success(href="/profile/"+users[index].id) view
+                    a.btn.btn-success.Home__view-btn(href="/profile/"+users[index].id) view
                 .Home__carousel__img-connect
                   img.d-block.img-fluid.Home___carousel__img(src= users[index+1].photo alt="First slide")
                   .Home__carousel_info-container
-                    .Home__carouse_name-age-container
+                    .Home__carousel_name-age-container
                       h5= users[index+1].name
                       h5= users[index+1].age
-                    a.btn.btn-success(href="/profile/"+users[index+1].id) view
+                    a.btn.btn-success.Home__view-btn(href="/profile/"+users[index+1].id) view
                 .Home__carousel__img-connect
                   img.d-block.img-fluid.Home___carousel__img(src= users[index+2].photo alt="First slide")
                   .Home__carousel_info-container
-                    .Home__carouse_name-age-container
+                    .Home__carousel_name-age-container
                       h5= users[index+2].name
                       h5= users[index+2].age
-                    a.btn.btn-success(href="/profile/"+users[index+2].id) view
+                    a.btn.btn-success.Home__view-btn(href="/profile/"+users[index+2].id) view
 
       a.carousel-control-prev(href="#carouselExampleIndicators" role="button" data-slide="prev")
         span.carousel-control-prev-icon(aria-hidden="true")

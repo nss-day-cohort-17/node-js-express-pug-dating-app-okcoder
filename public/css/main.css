@@ -48,6 +48,7 @@ body {
   display: flex;
   padding: 4em;
   justify-content: center;
+  margin: 0 auto;
 }
 
 .Home__carousel__img-connect {
@@ -66,15 +67,18 @@ body {
   height: 2em;
 }
 
-.Home__carouse_name-age-container {
+.Home__carousel_name-age-container {
   display: flex;
   flex-direction: column;
 }
 
 .Home___carousel__img {
-  /*width: 30%;
-  height: 90%;
-  margin: 0.5em;*/
+  width: 100%;
+  margin: 0.5em;
+}
+
+.Home__view-btn {
+  height: 2.5em;
 }
 
 .carousel-control-prev {
@@ -172,6 +176,7 @@ body {
   width: 70%;
   border-radius: 10px;
   padding: 2em;
+  margin: 0 auto;
 }
 
 .Register__container {

@@ -9,7 +9,7 @@ const Match = require('../models/matchesMod')
 module.exports.show = (req, res) => {
   User.findOneByEmail(res.locals.email)
   .then(user => {
-    res.render('profile', {user: user.toJSON()});
+    res.render('profile', {page: 'Profile', user: user.toJSON()});
   })
 }
 
