@@ -2,10 +2,11 @@
 
 const { Router } = require('express')
 
-const { showOther } = require('../controllers/profileCtrl')
+const { showOther, likeUser } = require('../controllers/profileCtrl')
 
 const router = Router()
 
 router.get('/profile/:id', showOther)
+router.post('/profile/:id', likeUser)
 
 module.exports = router
