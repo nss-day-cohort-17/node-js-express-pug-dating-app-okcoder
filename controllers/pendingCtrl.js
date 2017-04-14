@@ -5,17 +5,51 @@ const Like = require('../models/likesMod')
 const User = require('../models/userMod')
 const { GetWhereUserIsLiked } = require('./homeCtrl')
 
-// module.exports.show = (req, res) =>
-//   res.render('pending', {page: 'Pending'});
+const getUser = (id) => {
+   return User.forge({id})
+  .fetch()
+  .then( user => {
+    return user.toJSON()
+  })
+}
 
-const GetWhereUserIsLiker = (userId) => {
-  return Likes.forge().where('liker', userId).fetch({columns: ['liker', 'likee']})
+const GetYourLikers = (id) => {
+  return Like.forge().where('likee', id).fetchAll({columns: ['liker', 'likee']})
+    .then(rows => {
+      return rows.toJSON().map(like => {
+        return getUser(like.liker)
+      })
+    })
+}
+
+const GetYourLikees = (id) => {
+  return Like.forge().where('liker', id).fetchAll({columns: ['liker', 'likee']})
+    .then(rows => {
+      return rows.toJSON().map(like => {
+        return getUser(like.likee)
+      })
+    })
 }
 
 module.exports.show = (req, res) => { 
-  GetWhereUserIsLiked(res.locals.id)
-  .then(rows => {
-    console.log(rows.toJSON())
-  })
-  res.render('pending', {page: 'Pending'});
+  let userLikers;
+  let userLikees;
+  Promise.all([GetYourLikees(res.locals.id), GetYourLikers(res.locals.id)])
+   .then(([likees, likers]) => {
+    Promise.all(likees)
+      .then(dataLikees => {
+        userLikees = dataLikees
+      })
+      .then(() => {
+        Promise.all(likers)
+          .then( dataLikers => {
+            userLikers = dataLikers
+          })
+        .then(() => {
+          console.log('likers', userLikers)
+          console.log('likees', userLikees)
+          res.render('pending', {page: 'Pending', userLikees, userLikers});
+        })
+      })
+   })
 }

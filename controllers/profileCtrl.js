@@ -1,6 +1,7 @@
 'use strict';
 
 const User = require('../models/userMod')
+const Like = require('../models/likesMod')
 const { getUser } = require('./matchesCtrl')
 
 module.exports.show = (req, res) => {

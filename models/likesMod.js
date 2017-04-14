@@ -2,8 +2,8 @@
 
 const { bookshelf } = require('../db/database');
 
-const Likes = bookshelf.Model.extend({
+const Like = bookshelf.Model.extend({
   tableName: 'likes'
 })
 
-module.exports = Likes;
+module.exports = Like;
