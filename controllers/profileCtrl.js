@@ -26,6 +26,12 @@ module.exports.show = (req, res) => {
   })
 }
 
+const deleteLike = (userId, paramsId) => {
+  return Like.forge().where({likee: userId, liker: paramsId}).destroy()
+}
+
+
+
 module.exports.showOther = (req, res) => {
   getMatches(req.user.id, req.params.id)
   .then( (matches) => {
@@ -68,6 +74,12 @@ module.exports.likeUser = (req, res, err) => {
         //match the users
         Match.forge({userOne: user.likee, userTwo: user.liker})
           .save()
+          .then(() => {
+            deleteLike(req.user.id, req.params.id)
+          })
+          .then(() => {
+            deleteLike(req.params.id, req.user.id) 
+          })
           .then( () => {
             console.log('done with match')
             req.flash('msg', "Congrats, you two have matched. Invite OKCoder to the wedding")
