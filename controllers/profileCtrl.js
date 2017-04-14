@@ -3,6 +3,8 @@
 const User = require('../models/userMod')
 const Like = require('../models/likesMod')
 const { getUser } = require('./matchesCtrl')
+const Match = require('../models/matchesMod')
+
 
 module.exports.show = (req, res) => {
   User.findOneByEmail(res.locals.email)
@@ -19,29 +21,38 @@ module.exports.showOther = (req, res) => {
     })
 }
 
-const GetWhereUserIsLiked = (userId) => {
-  return Likes.forge().where('likee', userId).fetch({columns: ['liker', 'likee']})
+//checking to see where the user has been liked by another user so that can be checked for matches
+
+const GetWhereUserIsLiked = (userId, paramsId) => {
+  return Like.forge().where({likee: userId, liker: paramsId}).fetch({columns: ['liker', 'likee']})
 }
 
-module.exports.likeUser = ({ body, flash }, res, err) => {
-  GetWhereUserIsLiked(body.userId)
-    .then( (user) => user.toJSON())
+module.exports.likeUser = (req, res, err) => {
+  GetWhereUserIsLiked(req.user.id, req.params.id)
     .then( (user) => {
-    //checks to see if the user selected has currently liked the user
-      if (user.liker == body.selectedUserId) {
-        // if so, do the match stuff
-        Matches.forge(user)
+      if (user !== null) {
+        return user.toJSON()
+      }
+    })
+    .then( (user) => {
+      if (user) {
+        //match the users
+        Match.forge({userOne: user.likee, userTwo: user.liker})
           .save()
           .then( () => {
-            res.render('/')
-          })
-          .catch(err)
-      } else {
-        //do the like stuff
-        Likes.forge(body)
+            console.log('done with match')
+            req.flash('msg', "Congrats, you two have matched. Invite OKCoder to the wedding")
+            res.redirect(`/profile/${req.params.id}`)
+        })
+      }
+      else {
+        //post a like
+        Like.forge({liker: req.user.id, likee: req.params.id})
           .save()
           .then( () => {
-            res.render('/')
+            console.log('done with like')
+            req.flash('msg', "Congrats, you have successfully liked them")
+            res.redirect(`/profile/${req.params.id}`)
           })
       }
     })

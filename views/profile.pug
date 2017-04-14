@@ -4,7 +4,7 @@ block content
   .container.profile__container
     .row
       .profile__left-column.col.col-lg-4
-        img(src= user.photo)
+        img(class="Profile__img" src= user.photo)
         .profile__left-column-data-container
           .profile__personal-info-header
             h5 Name:
@@ -24,17 +24,17 @@ block content
             .profile__individual-question-container
               p Preferred gender for a partner?
               .form-check
-                label.form-check-label 
+                label.form-check-label
                   span= user.genderPref
             .profile__individual-question-container
               p Favorite pet?
               .form-check
-                label.form-check-label 
+                label.form-check-label
                   span= user.pet
             .profile__individual-question-container
               p Smoker?
               .form-check
-                label.form-check-label 
+                label.form-check-label
                   span= user.smoker
             .profile__individual-question-container
               p Favorite Language?
@@ -43,7 +43,7 @@ block content
             .profile__individual-question-container
               p Tabs or Spaces?
               .form-check
-                label.form-check-label 
+                label.form-check-label
                   span= user.tabspace
             .profile__individual-question-container
               p Favorite Editor?

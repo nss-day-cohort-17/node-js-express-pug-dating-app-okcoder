@@ -46,8 +46,6 @@ module.exports.show = (req, res) => {
             userLikers = dataLikers
           })
         .then(() => {
-          console.log('likers', userLikers)
-          console.log('likees', userLikees)
           res.render('pending', {page: 'Pending', userLikees, userLikers});
         })
       })
