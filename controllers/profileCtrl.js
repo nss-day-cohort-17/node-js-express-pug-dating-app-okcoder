@@ -19,9 +19,20 @@ const deleteLike = (userId, paramsId) => {
 
 
 module.exports.showOther = (req, res) => {
-  getUser(req.params.id)
-    .then((user) => {
-      res.render('otherProfile', {user});
+  let liked;
+  GetWhereUserIsLiked(req.user.id, req.params.id)
+    .then(like => {
+      like ? liked = 'This person has liked you! Like them back?' : liked = null
+      return getUser(req.params.id)
+        .then((user) => {
+          res.render('otherProfile', {user, liked});
+        })
+    })
+    .catch(() => {
+      getUser(req.params.id)
+        .then((user) => {
+          res.render('otherProfile', {user});
+        })
     })
 }
 
