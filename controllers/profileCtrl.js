@@ -5,6 +5,19 @@ const Like = require('../models/likesMod')
 const { getUser } = require('./matchesCtrl')
 const Match = require('../models/matchesMod')
 
+//checking to see where the user has been liked by another user so that can be checked for matches
+
+const GetWhereUserIsLiked = (userId, paramsId) => {
+  return Like.forge().where({likee: userId, liker: paramsId}).fetch({columns: ['liker', 'likee']})
+}
+
+const getMatches = (userId, paramsId) => {
+  return Match.query({where: {userOne: userId, userTwo: paramsId}, orWhere: {userOne: paramsId, userTwo: paramsId}}).fetch()
+}
+
+const getLikes = (userId, paramsId) => {
+  return Like.query({where: {liker: userId, likee: paramsId}}).fetch()
+}
 
 module.exports.show = (req, res) => {
   User.findOneByEmail(res.locals.email)
