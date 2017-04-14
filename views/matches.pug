@@ -5,17 +5,42 @@ block content
 
   #carouselExampleIndicators(class="carousel slide" data-ride="carousel")
     ol.carousel-indicators
-      li(data-target="#carouselExampleIndicators" data-slide-to="0" class="active")
+        each user, index in users
+          - let x = index/3
+          if index % 3 === 0 && index === 0
+            li(data-target="#carouselExampleIndicators" data-slide-to= x class="active")
+          else if index % 3 === 0
+            li(data-target="#carouselExampleIndicators" data-slide-to= x)
+
     .carousel-inner(role="listbox")
-      .carousel-item.active
-        .Home___carousel__img-container
-          each user in users
-            .Home__carousel__img-connect
-              img.d-block.img-fluid.Home___carousel__img(src= user.photo)
-              .Home__carousel_info-container
-                .Home__carousel_name-age-container
-                  h5= user.name
-                  h5= user.phone
+        each user, index in users
+          if index % 3 === 0
+            div(class=(index === 0)? "carousel-item active": "carousel-item")
+              .Home___carousel__img-container
+                if users[index]
+                  .Home__carousel__img-connect
+                    img.d-block.img-fluid.Home___carousel__img(src= users[index].photo alt= users[index].name)
+                    .Home__carousel_info-container
+                      .Home__carousel_name-age-container
+                        h5.Home__carousel__name= users[index].name
+                        h6= users[index].phone
+                      a.btn.btn-success.Home__view-btn(href="/profile/"+users[index].id) view
+                if users[index+1]
+                  .Home__carousel__img-connect
+                    img.d-block.img-fluid.Home___carousel__img(src= users[index+1].photo alt= users[index].name)
+                    .Home__carousel_info-container
+                      .Home__carousel_name-age-container
+                        h5.Home__carousel__name= users[index+1].name
+                        h6= users[index+1].phone
+                      a.btn.btn-success.Home__view-btn(href="/profile/"+users[index+1].id) view
+                if users[index+2]
+                  .Home__carousel__img-connect
+                    img.d-block.img-fluid.Home___carousel__img(src= users[index+2].photo alt= users[index].name)
+                    .Home__carousel_info-container
+                      .Home__carousel_name-age-container
+                        h5.Home__carousel__name= users[index+2].name
+                        h6= users[index+2].phone
+                      a.btn.btn-success.Home__view-btn(href="/profile/"+users[index+2].id) view
 
 
     a.carousel-control-prev(href="#carouselExampleIndicators" role="button" data-slide="prev")
