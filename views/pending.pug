@@ -6,16 +6,16 @@ block content
     //- likers
     h3.Pending__left Touching me, (these people like you...)
       .Pending__box
-        each liker in likers
+        each liker in userLikers
           .Pending__box__img
-            img(src=liker.photo alt="match one")
+            img(src=liker.photo alt=liker.name)
             .Pending__box__buttons
               button(type="button" class="btn btn-danger") ignore
-              button(type="button" class="btn btn-success") connect
+              a.btn.btn-success(href="/profile/"+liker.id) view
 
     //- likees
     h3.Pending__right Touching you, (you like these people...)
       .Pending__box
-        each likee in likees
+        each likee in userLikees
           .Pending__box__img
             img(src=likee.photo alt=likee.name)

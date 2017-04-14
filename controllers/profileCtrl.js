@@ -1,8 +1,8 @@
 'use strict';
 
 const User = require('../models/userMod')
-const { getUser } = require('./matchesCtrl')
 const Like = require('../models/likesMod')
+const { getUser } = require('./matchesCtrl')
 const Match = require('../models/matchesMod')
 
 
@@ -20,7 +20,6 @@ module.exports.showOther = (req, res) => {
       res.render('otherProfile', {user});
     })
 }
-
 
 //checking to see where the user has been liked by another user so that can be checked for matches
 
@@ -58,3 +57,5 @@ module.exports.likeUser = (req, res, err) => {
       }
     })
 }
+
+module.exports.GetWhereUserIsLiked = GetWhereUserIsLiked

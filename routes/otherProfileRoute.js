@@ -9,4 +9,5 @@ const router = Router()
 router.get('/profile/:id', showOther)
 router.post('/profile/:id', likeUser)
 
+
 module.exports = router

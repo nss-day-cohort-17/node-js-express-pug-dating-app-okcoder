@@ -2,6 +2,12 @@
 
 const { knex } = require('../db/database')
 const User = require('../models/userMod')
+const LikesQuery = () => knex('likes')
+const Likes = require('../models/likesMod')
+const Matches = require('../models/matchesMod')
+
+//GetWhereUserIsLiked(1);
+
 
 
 const getUsers = () =>
