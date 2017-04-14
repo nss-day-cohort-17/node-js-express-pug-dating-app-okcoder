@@ -9,16 +9,18 @@ const Matches = require('../models/matchesMod')
 
 //GetWhereUserIsLiked(1);
 
-console.log('shuffle', shuffle)
-
-const getUsers = () =>
-  User.forge().fetchAll().then(rows => shuffle(rows.toJSON()).slice(0, 15))
+const getUsers = (currUser) =>
+  // using lodash method of shuffle to randomize users. Then slice to get 15 users
+  User.forge().query( (qb) => {
+    qb.where('id', '!=', currUser)
+  }).fetchAll().then(rows => shuffle(rows.toJSON()).slice(0, 15))
   .catch((err) => {
     throw err
   })
 
 module.exports.show = (req, res, err) => {
-  Promise.all([getUsers()])
+  console.log('req', req.user.id)
+  Promise.all([getUsers(req.user.id)])
   .then(([users]) => {
     res.render('index', {page: 'Home', users});
   })
