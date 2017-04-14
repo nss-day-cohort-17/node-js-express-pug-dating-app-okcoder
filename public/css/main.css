@@ -138,6 +138,10 @@ body {
   margin-bottom: 2em;
 }
 
+.profile__connect-button {
+  margin-left: 1em;
+}
+
 /***** LOGIN *****/
 .Login__container {
   display: flex;
