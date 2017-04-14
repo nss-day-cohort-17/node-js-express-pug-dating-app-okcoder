@@ -32,6 +32,26 @@ const deleteLike = (userId, paramsId) => {
 
 
 
+const checkIfLiked = (req, res) => {
+  let liked;
+  GetWhereUserIsLiked(req.user.id, req.params.id)
+    .then(like => {
+      like ? liked = 'This person has liked you! Like them back?' : liked = null
+      return getUser(req.params.id)
+        .then((user) => {
+          res.render('otherProfile', {user, liked});
+        })
+    })
+    .catch(() => {
+      getUser(req.params.id)
+        .then((user) => {
+          res.render('otherProfile', {user});
+        })
+    })
+}
+
+//checking to see where the user has been liked by another user so that can be checked for matches
+
 module.exports.showOther = (req, res) => {
   getMatches(req.user.id, req.params.id)
   .then( (matches) => {
@@ -53,10 +73,7 @@ module.exports.showOther = (req, res) => {
               res.render('otherProfile', {user});
             })
         } else {
-          getUser(req.params.id)
-            .then((user) => {
-              res.render('otherProfile', {user})
-            })
+          checkIfLiked(req, res)
         }
       })
   })
@@ -82,7 +99,7 @@ module.exports.likeUser = (req, res, err) => {
           })
           .then( () => {
             console.log('done with match')
-            req.flash('msg', "Congrats, you two have matched. Invite OKCoder to the wedding")
+            req.flash('match', "Congrats, you two have matched. Invite OKCoder to the wedding")
             res.redirect(`/profile/${req.params.id}`)
         })
       }
@@ -92,7 +109,7 @@ module.exports.likeUser = (req, res, err) => {
           .save()
           .then( () => {
             console.log('done with like')
-            req.flash('msg', "Congrats, you have successfully liked them")
+            req.flash('success', "Congrats, you have successfully liked them")
             res.redirect(`/profile/${req.params.id}`)
           })
       }
