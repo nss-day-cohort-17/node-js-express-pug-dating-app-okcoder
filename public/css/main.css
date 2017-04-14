@@ -54,7 +54,7 @@ body {
 .Home__carousel__img-connect {
   width: 30%;
   height: 90%;
-  margin: 0.5em;
+  margin: 1em;
 }
 
 .Home__carousel_info-container {
@@ -74,7 +74,6 @@ body {
 
 .Home___carousel__img {
   width: 100%;
-  margin: 0.5em;
 }
 
 .Home__view-btn {
