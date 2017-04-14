@@ -51,10 +51,15 @@ block content
             .profile__individual-question-container
               p Operating System?
               p= user.os
-      if liked
-        h5= liked
-      if messages.msg
-        h5= messages.msg
-      else
-        form(method='POST')
-          button(type="submit" class="btn connect btn-success") Connect
+      .profile__connect-button  
+        if liked
+          h5= liked      
+        if messages.match
+          h5= messages.match
+        else if messages.success
+          h5= messages.success
+        else if messages.msg
+          h5= messages.msg
+        else
+          form(method='POST')
+            button(type="submit" class="btn connect btn-success") Connect
