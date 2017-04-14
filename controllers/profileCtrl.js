@@ -26,18 +26,34 @@ module.exports.show = (req, res) => {
   })
 }
 
-
 module.exports.showOther = (req, res) => {
-  getUser(req.params.id)
-    .then((user) => {
-      res.render('otherProfile', {user});
-    })
-}
-
-//checking to see where the user has been liked by another user so that can be checked for matches
-
-const GetWhereUserIsLiked = (userId, paramsId) => {
-  return Like.forge().where({likee: userId, liker: paramsId}).fetch({columns: ['liker', 'likee']})
+  getMatches(req.user.id, req.params.id)
+  .then( (matches) => {
+    if (matches) {
+      getUser(req.params.id)
+        .then((user) => {
+          req.flash('msg', "Congrats, you two have matched!")
+          res.render('otherProfile', {user});
+        })
+    }
+  })
+  .then( () => {
+    getLikes(req.user.id, req.params.id)
+      .then( (likes) => {
+        if (likes) {
+          getUser(req.params.id)
+            .then((user) => {
+              req.flash('msg', "You have already liked this user")
+              res.render('otherProfile', {user});
+            })
+        } else {
+          getUser(req.params.id)
+            .then((user) => {
+              res.render('otherProfile', {user})
+            })
+        }
+      })
+  })
 }
 
 module.exports.likeUser = (req, res, err) => {
